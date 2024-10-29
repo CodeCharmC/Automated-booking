@@ -20,6 +20,18 @@ exports.getAppointments = async (req, res) => {
   }
 };
 
+exports.getSingleAppointments = async (req, res) => {
+  try {
+    const singleAppointments = await Appointment.findById( new mongoose.Types.ObjectId(req.params.id));    
+    if (!singleAppointments) {
+      return res.status(404).json({ error: 'Appointment not found' });
+    }
+    res.json(singleAppointments);
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
+
 exports.updateAppointment = async (req, res) => {
   try {
     const updatedAppointment = await Appointment.findByIdAndUpdate(
