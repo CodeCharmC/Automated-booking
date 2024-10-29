@@ -11,7 +11,7 @@ mongoose.connect(process.env.MONGODB_URI, { })
   .catch((error) => console.error("MongoDB connection error:", error));
 
 app.use(express.json());
-app.use('/api/appointments', appointmentRoutes);
+app.use('/appointments', appointmentRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on port ${process.env.PORT}`);
