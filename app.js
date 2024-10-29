@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const appointmentRoutes = require('./express-backend/routes/appointment.js');
+const path = require('path');
 
 dotenv.config();
 const app = express();
