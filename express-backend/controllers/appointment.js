@@ -1,13 +1,34 @@
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose');
 const Appointment = require('../models/appointment.js');
 
 exports.createAppointment = async (req, res) => {
   try {
+    const requiredFields = ['patientName', 'appointmentDate', 'appointmentTime', 'doctorName'];
+    for (const field of requiredFields) {
+      if (!req.body[field]) {
+        return res.status(400).json({ error: `${field} is required` });
+      }
+    }
+
     const appointment = new Appointment(req.body);
     await appointment.save();
-    res.status(201).json(appointment);
+    res.status(201).json({ message: 'Appointment created successfully', appointment });
   } catch (error) {
-    res.status(400).json({ error });
+    res.status(400).json({ error: error.message });
+  }
+};
+
+exports.appointmentDetails = async (req, res) => {
+  try {
+    const appointment = await Appointment.findById(
+      new mongoose.Types.ObjectId(req.params.id)
+    );
+    if (!appointment) {
+      return res.status(404).json({ error: 'Appointment not found' });
+    }
+    res.json(appointment);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -16,19 +37,19 @@ exports.getAppointments = async (req, res) => {
     const appointments = await Appointment.find();
     res.json(appointments);
   } catch (error) {
-    res.status(500).json({ error });
+    res.status(500).json({ error: error.message });
   }
 };
 
-exports.getSingleAppointments = async (req, res) => {
+exports.getSingleAppointment = async (req, res) => {
   try {
-    const singleAppointments = await Appointment.findById( new mongoose.Types.ObjectId(req.params.id));    
-    if (!singleAppointments) {
+    const singleAppointment = await Appointment.findById( new mongoose.Types.ObjectId(req.params.id));    
+    if (!singleAppointment) {
       return res.status(404).json({ error: 'Appointment not found' });
     }
     res.json(singleAppointments);
   } catch (error) {
-    res.status(500).json({ error });
+    res.status(500).json({ error: error.message });
   }
 };
 
@@ -37,23 +58,26 @@ exports.updateAppointment = async (req, res) => {
     const updatedAppointment = await Appointment.findByIdAndUpdate(
       new mongoose.Types.ObjectId(req.params.id),
       req.body,
-      { new: true }
+      { new: true, runValidators: true }
     );
     if (!updatedAppointment) {
       return res.status(404).json({ error: 'Appointment not found' });
     }    
-    res.json(updatedAppointment);
+    res.json({ message: 'Appointment updated successfully', updatedAppointment});
   } catch (error) {
     console.error(error);
-    res.status(400).json({ error });
+    res.status(400).json({ error: error.message });
   }
 };
 
 exports.deleteAppointment = async (req, res) => {
   try {
-    await Appointment.findByIdAndDelete( new mongoose.Types.ObjectId(req.params.id));
-    res.status(204).send();
+    const deleteAppointment = await Appointment.findByIdAndDelete(new mongoose.Types.ObjectId(req.params.id));
+    if (!deleteAppointment) {
+      return res.status(404).json({ error: 'Appointment not found'})
+    }
+    res.status(204).json({ message: 'Appointment deleted successfully' });
   } catch (error) {
-    res.status(500).json({ error });
+    res.status(500).json({ error: error.message });
   }
 };
