@@ -2,9 +2,9 @@ document.getElementById('appointmentForm').addEventListener('submit', async (e) 
   e.preventDefault();
 
   const data = {
-    name: document.getElementById('name').value,
+    name: document.getElementById('patientName').value,
     email: document.getElementById('email').value,
-    date: document.getElementById('date').value,
+    date: document.getElementById('appointmentDate').value,
     time: document.getElementById('time').value,
   };
 
