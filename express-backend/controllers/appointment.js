@@ -47,7 +47,7 @@ exports.getSingleAppointment = async (req, res) => {
     if (!singleAppointment) {
       return res.status(404).json({ error: 'Appointment not found' });
     }
-    res.json(singleAppointments);
+    res.json(singleAppointment);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
