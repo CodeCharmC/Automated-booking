@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+   p{
+      font-size: smaller;
+   }
+   p a{
+      text-decoration: none;
+      color: #007bff;
+   }
+</style>
+</head>
+<body>
+<header>
+   <h1>Register</h1>
+   <nav>
+      <ul class="role-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="create-appointment.html">Appointments</a></li>
+      <li><a href="doctors.html">Doctors</a></li>
+      </ul>
+   </nav>
+</header>
+<main>
+   <section>
+      <h2>Register</h2>
+      <form id="register-form">
+      <input type="text" id="register-username" placeholder="Username" required />
+      <input type="email" id="register-email" placeholder="Email" required />
+      <input type="password" id="register-password" placeholder="Password" required />
+      <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="auth-login.html">Login</a></p>
+   </section>
+
+</main>
+<footer>
+   <p>&copy; 2024 Healthcare App</p>
+</footer>
+<script src="auth.js"></script>
+</body>
+</html>
