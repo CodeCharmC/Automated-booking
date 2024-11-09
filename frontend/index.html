@@ -3,35 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Appointments</title>
+<title>Healthcare App</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-   <header class="header">
-      <h1>Book Your Medical Examination</h1>
-      <p>Find available slots and confirm your appointments seamlessly.</p>
-   </header>
-
-   <section class="appointment-form">
-      <h2>Schedule an Appointment</h2>
-      <form id="appointmentForm">
-      <label for="patientName">Full Name:</label>
-      <input type="text" id="patientName" name="patientName" required placeholder="Enter your name">
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required placeholder="Enter your email">
-
-      <label for="appointmentDate">Appointment Date:</label>
-      <input type="date" id="appointmentDate" name="appointmentDate" required>
-
-      <label for="time">Preferred Time:</label>
-      <input type="time" id="time" name="time" required>
-
-      <button type="submit">Book Appointment</button>
-      </form>
+<header>
+   <h1>Healthcare</h1>
+   <nav>
+      <ul>
+      <li><a href="appointments.html">Appointments</a></li>
+      <li><a href="doctors.html">Doctors</a></li>
+      <li><a href="auth.html">Login / Register</a></li>
+      </ul>
+   </nav>
+</header>
+<main>
+   <section class="intro">
+      <h4>Welcome to Healthcare</h4>
+      <h2>Your Health, Our Priority</h2>
+      <p>Book appointments with doctors easily. Manage your healthcare with ease.</p>      
    </section>
-</div>
-<script src="script.js"></script>
+</main>
+<footer>
+   <p>&copy; 2024 Healthcare</p>
+</footer>
 </body>
 </html>
