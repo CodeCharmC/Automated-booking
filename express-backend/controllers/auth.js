@@ -5,9 +5,9 @@ const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expires
 
 exports.register = async (req, res) => {
    try {
-      const { username, password, specialty } = req.body;
+      const { username, password, specialty, experience} = req.body;
       
-      if (!username || !password || !specialty) {
+      if (!username || !password || !specialty || !experience) {
          return res.status(400).json({ error: 'All fields are required: username, password, specialty, experience, and office hours.' });
       }
       
