@@ -3,13 +3,12 @@ const Appointment = require('../models/appointment.js');
 
 exports.createAppointment = async (req, res) => {
   try {
-    const requiredFields = ['patientName', 'appointmentDate', 'appointmentTime', 'doctorName'];
+    const requiredFields = ['patientName', 'appointmentDate', 'appointmentTime', 'doctorId'];
     for (const field of requiredFields) {
       if (!req.body[field]) {
         return res.status(400).json({ error: `${field} is required` });
       }
     }
-
     const appointment = new Appointment(req.body);
     await appointment.save();
     res.status(201).json({ message: 'Appointment created successfully', appointment });
@@ -34,7 +33,8 @@ exports.appointmentDetails = async (req, res) => {
 
 exports.getAppointments = async (req, res) => {
   try {
-    const appointments = await Appointment.find();
+    const appointments = await Appointment.find({
+      doctorId: req.userId});
     res.json(appointments);
   } catch (error) {
     res.status(500).json({ error: error.message });
