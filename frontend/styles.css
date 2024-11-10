@@ -1,3 +1,4 @@
+/* Reset and global styles */
 * {
    margin: 0;
    padding: 0;
@@ -9,43 +10,52 @@ body {
    background-color: #f4f4f9;
    color: #333;
    line-height: 1.6;
-   max-width: 1200px;
    margin: 0 auto;
 }
-
 header {
    width: 100%;
-   background-color: rgba(0, 86, 179, 0.9); /* More subtle background */
-   color: white;
-   padding: 1rem 0;
-   text-align: center;
+   background-color: rgba(0, 86, 179, 0.9);
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
    position: sticky;
    top: 0;
-   z-index: 100; 
+   z-index: 100;
+   color: #fff;
+   text-align: center;
+}
+
+.nav-container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 1rem;
+   text-align: center;
    display: flex;
    justify-content: space-between;
    align-items: center;
-   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+}
+
+header h1 {
+   font-size: 1.8rem;
 }
 
 header nav ul {
    list-style: none;
    display: flex;
-   justify-content: space-between;
+   gap: 1.5rem;
    align-items: center;
 }
 
-header nav ul li {
-   margin: 0 15px;
-   padding: 5px;
-}
-
 header nav ul li a {
-   color: white;
+   color: #fff;
    text-decoration: none;
    font-weight: bold;
+   transition: color 0.3s ease;
 }
 
+header nav ul li a:hover {
+   color: #cce7ff;
+}
+
+/* Role-specific links styling */
 .role-title {
    font-size: 1.2rem;
    font-weight: bold;
@@ -62,63 +72,130 @@ header nav ul li a {
 }
 
 .role-links a {
-   color: white;
+   color: #fff;
    text-decoration: none;
    font-size: 1.1rem;
+   transition: color 0.3s ease;
 }
 
 .role-links a:hover {
-   color: #001d3d; /* Darker color on hover for better contrast */
+   color: #cce7ff;
    text-decoration: underline;
 }
 
+/* Main content styling */
 main {
    padding: 2rem;
+   max-width: 900px;
+   margin: 0 auto;
+}
+
+.appointment-form h2 {
+   font-size: 1.6rem;
+   margin-bottom: 1.5rem;
 }
 
 .intro h4, .intro h2 {
    margin-bottom: 1rem;
 }
 
-footer {
-   width: 100%;
-   background-color: #333;
-   color: white;
-   text-align: center;
-   padding: 1rem 0;
-   position:static; /* Changed from fixed to relative */
-}
-
-footer p {
-   margin: 0;
-}
-
-form input, form button {
+/* Form and input styling */
+form input, form button, form select, form textarea {
    width: 100%;
    padding: 0.8rem;
    margin: 10px 0;
    border: 1px solid #ccc;
    border-radius: 5px;
+   font-size: 1rem;
+   font-family: inherit;
+}
+/*inputs placeholder's styling */
+
+form input, 
+form textarea::placeholder {
+   color: #aaa;
+   font-size: smaller;
+   opacity: 0,7;
+}
+
+form select{
+   color: #aaa;
+   font-size: smaller;
+}
+
+form select option{
+   color: #333;
+   font-size: large;
+}
+
+/* Apply styles when the select element is focused or after a valid selection */
+form select:focus,
+form select:valid {
+   outline: none;
+   border-color: #007bff;
+   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+   color: black;
+}
+
+form select:focus option {
+   background-color: #cce7ff; 
+}
+
+form input:focus, form textarea:focus, form select:focus {
+   outline: none;
+   border-color: #007bff; 
+   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+   color: black;
 }
 
 form button {
    background-color: #007bff;
-   color: white;
+   color: #fff;
    border: none;
    cursor: pointer;
+   transition: background-color 0.3s ease;
 }
 
 form button:hover {
    background-color: #0056b3;
 }
 
+#feedback {
+   margin-top: 1rem;
+   font-size: 1rem;
+}
+
+.success {
+   color: green;
+}
+
+.error {
+   color: red;
+}
+
+/* Footer styling */
+footer {
+   width: 100%;
+   background-color: #333;
+   color: #fff;
+   text-align: center;
+   padding: 1rem 0;
+}
+
+footer p {
+   margin: 0;
+   font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
    header {
       flex-direction: column;
-      align-items: center;
    }
+
    header nav ul {
       flex-direction: column;
+      gap: 0.8rem;
       align-items: center;
    }
 
