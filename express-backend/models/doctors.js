@@ -14,6 +14,20 @@ const doctorSchema = new mongoose.Schema({
     required: true,
     minlength: 8
   },
+  specialty: {
+    type: String,
+    required: true,
+    minlength: 3,
+    trim: true
+  },
+  experience: {
+    type: Number,
+    required: true
+  },
+  officeHours: {
+    type: String,
+    required: true
+  }
 });
 
 doctorSchema.pre('save', async function (next) {
