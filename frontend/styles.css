@@ -1,4 +1,3 @@
-/* Reset and global styles */
 * {
    margin: 0;
    padding: 0;
@@ -12,6 +11,7 @@ body {
    line-height: 1.6;
    margin: 0 auto;
 }
+
 header {
    width: 100%;
    background-color: rgba(0, 86, 179, 0.9);
@@ -55,7 +55,6 @@ header nav ul li a:hover {
    color: #cce7ff;
 }
 
-/* Role-specific links styling */
 .role-title {
    font-size: 1.2rem;
    font-weight: bold;
@@ -83,7 +82,6 @@ header nav ul li a:hover {
    text-decoration: underline;
 }
 
-/* Main content styling */
 main {
    padding: 2rem;
    max-width: 900px;
@@ -99,7 +97,6 @@ main {
    margin-bottom: 1rem;
 }
 
-/* Form and input styling */
 form input, form button, form select, form textarea {
    width: 100%;
    padding: 0.8rem;
@@ -109,7 +106,6 @@ form input, form button, form select, form textarea {
    font-size: 1rem;
    font-family: inherit;
 }
-/*inputs placeholder's styling */
 
 form input, 
 form textarea::placeholder {
@@ -128,7 +124,6 @@ form select option{
    font-size: large;
 }
 
-/* Apply styles when the select element is focused or after a valid selection */
 form select:focus,
 form select:valid {
    outline: none;
@@ -173,7 +168,6 @@ form button:hover {
    color: red;
 }
 
-/* Footer styling */
 footer {
    width: 100%;
    background-color: #333;
@@ -187,7 +181,6 @@ footer p {
    font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
    header {
       flex-direction: column;
