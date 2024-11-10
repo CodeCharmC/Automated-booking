@@ -7,7 +7,7 @@ exports.register = async (req, res) => {
    try {
       const { username, password, specialty, experience, officeHours } = req.body;
       
-      if (!username || !password || !specialty || !experience) {
+      if (!username || !password || !specialty || !experience || !officeHours) {
          return res.status(400).json({ error: 'All fields are required: username, password, specialty, experience, and office hours.' });
       }
       
