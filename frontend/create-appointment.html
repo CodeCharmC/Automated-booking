@@ -8,40 +8,55 @@
 </head>
 <body>
    <header>
-      <h1>Healthcare</h1>
-      <nav>
-            <ul class="role-links">
-               <li><a href="appointments.html">My Appointment</a></li>
-               <li><a href="doctors.html">Find a Doctor</a></li>
-               <li><a href="auth.html">Logout</a></li>
-            </ul>
-      </nav>
+      <div class="nav-container">
+         <h1>Healthcare</h1>
+         <nav>
+               <ul class="role-links">
+                  <li><a href="appointments.html">My Appointment</a></li>
+                  <li><a href="doctors.html">Find a Doctor</a></li>
+                  <li><a href="auth.html">Logout</a></li>
+               </ul>
+         </nav>
+      </div>
    </header>
 
    <main>
       <section class="appointment-form">
             <h2>Create Appointment</h2>
             <form id="appointment-form">
+               <label for="patient-name">Name:</label>
+               <input type="text" id="patient-name" name="patientName" required placeholder="Enter the patient name">
+
+               <label for="patient-address">Address:</label>
+               <input type="text" id="patient-address" name="patientAddress" required placeholder="Enter the patient address">
+
+               <label for="phone">Phone Number:</label>
+               <input type="tel" id="phone" name="phoneNumber" required placeholder="Enter the contact number">
+
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" placeholder="Email">
+
                <label for="doctor">Choose a Doctor:</label>
-               <select id="doctor" name="doctor" required>
+               <select id="doctor" name="doctorId" required>
                   <option value="">Select a doctor</option>
-                  <!-- The doctor list can be dynamically generated via JavaScript -->
-                  <option value="1">Dr. John Doe - Cardiologist</option>
-                  <option value="2">Dr. Jane Smith - Dermatologist</option>
-                  <option value="3">Dr. Emily White - Pediatrician</option>
+                  <!-- Doctor list will be populated dynamically -->
                </select>
 
                <label for="date">Appointment Date:</label>
-               <input type="date" id="date" name="date" required>
+               <input type="date" id="date" name="appointmentDate" required>
 
                <label for="time">Appointment Time:</label>
-               <input type="time" id="time" name="time" required>
+               <input type="time" id="time" name="appointmentTime" required>
 
-               <label for="comments">Additional Comments:</label>
-               <textarea id="comments" name="comments" rows="4" placeholder="Any special requests or symptoms?" ></textarea>
+               <label for="disease">Disease Name:</label>
+               <input type="text" id="disease" name="diseaseName" placeholder="Enter the disease name or major symptoms">
+
+               <label for="short-description">Notes:</label>
+               <input type="text" id="short-description" name="shortDescription" placeholder="Any special requests?">
 
                <button type="submit">Book Appointment</button>
             </form>
+            <div id="feedback" role="alert"></div>
       </section>
    </main>
 
@@ -49,30 +64,6 @@
       <p>&copy; 2024 Healthcare</p>
    </footer>
 
-   <script>
-      // Example JS for form submission and validation (optional)
-      document.getElementById('appointment-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const doctor = document.getElementById('doctor').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-            const comments = document.getElementById('comments').value;
-
-            // Validate form data (basic)
-            if (!doctor || !date || !time) {
-               alert("Please fill all required fields.");
-               return;
-            }
-
-            // Here you can send the form data to the backend for processing, for example:
-            // fetch('/appointments', { method: 'POST', body: JSON.stringify({ doctor, date, time, comments }) });
-
-            alert("Appointment successfully booked!");
-
-            // Optionally reset the form
-            document.getElementById('appointment-form').reset();
-      });
-   </script>
+   <script src="create-appointment.js"></script>
 </body>
 </html>
