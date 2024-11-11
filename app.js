@@ -25,6 +25,8 @@ app.use('/appointments', appointmentRoutes);
 app.use('/auth', authRoutes);
 app.use('/doctor', doctorRoutes);
 
+app.use('/assets', express.static(path.join(__dirname, 'assets')));
+
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
 });
