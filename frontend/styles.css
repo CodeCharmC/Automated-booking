@@ -242,3 +242,76 @@ footer p {
       padding-left: 0;
    }
 }
+
+/* Doctor Card Styles */
+.list-container {
+   list-style: none;
+}
+
+.doctor-card {
+   display: flex;
+   justify-content: space-between;
+   background: #fff;
+   padding: 1.5rem;
+   margin: 1rem 0;
+   border-radius: 10px;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-info {
+   flex: 1;
+   max-width: 60%;
+}
+
+.doctor-info h3 {
+   font-size: 1.8rem;
+   margin-bottom: 0.5rem;
+   color: #333;
+}
+
+.doctor-info p {
+   font-size: 1rem;
+   margin: 0.3rem 0;
+   color: #555;
+}
+
+.doctor-info .book-appointment {
+   margin-top: 1rem;
+   padding: 0.8rem 1.2rem;
+   background: linear-gradient(to right, #69A9D4, #BABBC5, #C3E5F6);
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-size: 1rem;
+   font-weight: bold;
+   transition: background 0.3s ease-in-out;
+}
+.doctor-info .book-appointment a {
+   text-decoration: none;
+   color: #fff;
+}
+
+.doctor-info .book-appointment:hover {
+   background: #BABBC5;
+}
+
+.doctor-card img {
+   width: 200px;
+   height: 200px;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 4px solid #e0f7ff;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+   transition: transform 0.3s ease;
+}
+
+.doctor-card img:hover {
+   transform: scale(1.1);
+}
