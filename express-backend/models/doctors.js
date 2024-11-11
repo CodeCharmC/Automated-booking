@@ -27,6 +27,18 @@ const doctorSchema = new mongoose.Schema({
   officeHours: {
     type: String,
     required: true
+  },
+  avatar: {
+    type: String,
+    required: false,
+    trim: true,
+    default: '/assets/profile.jpg',
+    validate: {
+      validator: function(v) {
+        return /^(ftp|http|https):\/\/[^ "]+$/.test(v);
+      },
+      message: props => `${props.value} is not a valid URL!`
+    }
   }
 });
 
