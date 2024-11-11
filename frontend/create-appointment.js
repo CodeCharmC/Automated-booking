@@ -1,3 +1,8 @@
+function getQueryParams(doctorId) {
+   const urlParams = new URLSearchParams(window.location.search);
+   return urlParams.get(doctorId);
+}
+
 async function fetchDoctors() {
    try {
       const response = await fetch('/doctor/');
@@ -9,6 +14,11 @@ async function fetchDoctors() {
          const option = document.createElement('option');
          option.value = doctor._id;
          option.textContent = `${doctor.username} - ${doctor.specialty}`;
+
+         if (doctor._id === getQueryParams('doctorId')) {
+            option.selected = true;
+         }
+
          doctorSelect.appendChild(option);
       });
    } catch (error) {
