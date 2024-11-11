@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Doctors</title>
-<link rel="stylesheet" href="styles.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Doctors | Healthcare</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
    <header>
       <div class="nav-container">
-         <h1>Healthcare</h1>
+         <h1>
+            <a href="index.html">Healthcare</a>
+         </h1>
          <nav>
-               <ul class="role-links">
-                  <li><a href="appointments.html">My Appointment</a></li>
-                  <li><a href="doctors.html">Find a Doctor</a></li>
-                  <li><a href="auth.html">Logout</a></li>
-               </ul>
+            <ul class="role-links">
+               <li><a href="create-appointment.html">Book Appointment</a></li>
+               <li><a href="appointments.html">My Appointment</a></li>               
+               <li><a href="news.html">News & Updates</a></li>
+            </ul>
          </nav>
       </div>
    </header>
-<main>
-   <section>
-      <h2>Meet Our Doctors</h2>
-      <ul id="doctors-list"></ul>
-   </section>
-</main>
-<footer>
-   <p>&copy; 2024 Healthcare App</p>
-</footer>
-<script src="doctors.js"></script>
+   <main>
+      <section>
+         <h2>Meet Our Doctors</h2>
+         <ul id="doctors-list" class="list-container"></ul>
+      </section>
+   </main>
+   <footer>
+      <p>&copy; 2024 Healthcare App</p>
+   </footer>
+   <script src="doctors.js"></script>
 </body>
 </html>
