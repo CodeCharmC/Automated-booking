@@ -3,30 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthcare App</title>
+<title>Healthcare</title>
 <link rel="stylesheet" href="styles.css">
+<style>
+ .intro  {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+ }
+ .intro img {
+   max-width: 500px;
+    min-width: 150px;
+    border-radius: 20px;
+ }
+ .role-container {
+   padding: 2rem; 
+   border-radius: 10px;
+   background: linear-gradient(to right, #69A9D4, #BABBC5, #C3E5F6); /*// matches the img*/
+   box-shadow: inset 50px 10px 50px rgba(0, 0, 0, 0.2);
+   opacity: unset;
+}
+@media screen and (max-width: 768px) {
+   .intro {
+      flex-direction: column;
+   }
+}
+         
+</style>
 </head>
 <body>
    <header>
       <div class="nav-container">
-         <h1>Healthcare</h1>
+         <h1>
+            <a href="index.html">Healthcare</a>
+         </h1>
          <nav aria-label="Main Navigation">
             <ul>
                <!-- Patient Section -->
                <li>
-                  <p class="role-title">Are you a patient?</p>
                   <ul class="role-links">
-                     <li><a href="appointments.html">Create Appointment</a></li>
-                     <li><a href="doctors.html">Find a Doctor</a></li>
+                     <li><a href="create-appointment.html">Book Appointment</a></li>
+                     <li><a href="doctors.html">Meet Our Doctors</a></li>
                   </ul>
                </li>
       
                <!-- Doctor Section -->
                <li>
-                  <p class="role-title">Are you a doctor?</p>
                   <ul class="role-links">
-                     <li><a href="auth-login.html">Login</a></li>
-                     <li><a href="auth-register.html">Register</a></li>
+                     <li><a href="about.html">About Us</a></li>
+                     <li><a href="news.html">News & Updates</a></li>
                   </ul>
                </li>
             </ul>
@@ -36,9 +64,32 @@
    
    <main>
       <section class="intro">
-         <h4>Welcome to Healthcare</h4>
-         <h2>Your Health, Our Priority</h2>
-         <p>Book appointments with doctors easily. Manage your healthcare with ease.</p>      
+         <div>
+            <h5>Welcome to Healthcare</h5>
+            <h2>Your Health, Our Priority</h2>
+            <p>Book appointments with doctors easily. Manage your healthcare with ease.</p> 
+         </div>          
+         <img src="assets/hero-img-1.jpg" alt="Healthcare">    
+      </section>
+      <section>
+         <div aria-label="User Roles" class="role-container">
+            <ul>
+               <li>
+                  <p class="role-title">Patient Services</p>
+                  <ul class="role-links">
+                     <li><a href="create-appointment.html">Schedule a Visit</a></li>
+                     <li><a href="doctors.html">Find a Specialist</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <p class="role-title">Doctor Resources</p>
+                  <ul class="role-links">
+                     <li><a href="auth-login.html">Login</a></li>
+                     <li><a href="auth-register.html">Join Our Network</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
       </section>
    </main>
    
