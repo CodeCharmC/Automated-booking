@@ -358,3 +358,10 @@ footer p {
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
    transition: transform 0.3s ease;
 }
+
+#container3D {
+   position: fixed;
+   inset: 0;
+   z-index: 1000;
+   pointer-events: none;
+}
