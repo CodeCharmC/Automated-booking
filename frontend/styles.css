@@ -512,6 +512,80 @@ footer p {
    color: #BABBC5;
 }
 
+.appointments-section {
+   padding: 2rem 1rem;
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.appointments-section h3 {
+   font-size: 1.8rem;
+   color: #333;
+   margin-bottom: 1rem;
+}
+
+.appointment-card {
+   background-color: #fff;
+   padding: 1.5rem;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-bottom: 1.5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: transform 0.2s ease;
+}
+
+.appointment-card:hover {
+   transform: translateY(-5px);
+}
+
+.appointment-info h4 {
+   font-size: 1.5rem;
+   color: #333;
+}
+
+.appointment-info p {
+   font-size: 1rem;
+   color: #555;
+   margin: 0.3rem 0;
+}
+
+.appointment-actions {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.reschedule-btn, .cancel-btn {
+   padding: 0.5rem 1rem;
+   font-size: 1rem;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   font-weight: bold;
+   color: #fff;
+}
+
+.reschedule-btn {
+   background-color: #69A9D4;
+   transition: background 0.3s ease;
+}
+
+.reschedule-btn:hover {
+   background-color: #BABBC5;
+}
+
+.cancel-btn {
+   background-color: #d9534f;
+   transition: background 0.3s ease;
+}
+
+.cancel-btn:hover {
+   background-color: #c9302c;
+}
+
+
 
 #container3D {
    position: fixed;
