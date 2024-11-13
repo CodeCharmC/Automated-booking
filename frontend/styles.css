@@ -415,6 +415,104 @@ footer p {
    transition: transform 0.3s ease;
 }
 
+/* for news and updates page */
+.news-section {
+   padding: 2rem 1rem;
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.news-intro {
+   display: flex;
+   flex-direction: column;
+   align-items: start;
+   text-align: center;
+   margin-bottom: 2rem;
+}
+
+.news-intro h3 {
+   font-size: 1.8rem;
+   margin-bottom: 1rem;
+   color: #333;
+}
+
+.news-intro p {
+   font-size: normal;
+   color: #555;
+}
+
+.news-section h3 {
+   font-size: 1.8rem;
+   color: #333;
+   margin-bottom: 1rem;
+}
+
+.news-card, .article-card {
+   background-color: #fff;
+   padding: 1.5rem;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   margin-bottom: 1.5rem;
+   transition: transform 0.2s ease;
+}
+
+.news-card:hover, .article-card:hover {
+   transform: translateY(-5px);
+}
+
+.news-card h4, .article-card h4 {
+   font-size: 1.5rem;
+   margin-bottom: 0.5rem;
+}
+
+.news-card p, .article-card p {
+   font-size: 1rem;
+   color: #555;
+   margin-bottom: 0.5rem;
+}
+
+.article-card a {
+   color: #69A9D4;
+   text-decoration: none;
+   font-weight: bold;
+   transition: color 0.3s ease;
+}
+
+.article-card a:hover {
+   color: #BABBC5;
+}
+
+.announcements ul {
+   list-style: none;
+   padding-left: 0;
+   margin-top: 1rem;
+}
+
+.announcements li {
+   font-size: 1rem;
+   color: #555;
+   margin-bottom: 0.5rem;
+}
+
+.announcements span {
+   color: #888;
+   font-size: 0.9rem;
+   display: block;
+   margin-top: 0.2rem;
+}
+
+.social-links a {
+   color: #69A9D4;
+   text-decoration: none;
+   margin: 0 0.5rem;
+   font-size: 1rem;
+}
+
+.social-links a:hover {
+   color: #BABBC5;
+}
+
+
 #container3D {
    position: fixed;
    inset: 0;
