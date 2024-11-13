@@ -227,6 +227,62 @@ footer p {
    font-size: 0.9rem;
 }
 
+
+/* Footer Section */
+.footer-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 1rem;
+   padding: 2rem 1rem;
+   background-color: #1e3a5f;
+   color: #fff;
+}
+
+.footer-section h4 {
+   font-size: 1.2rem;
+   color: #fff;
+   margin-bottom: 1rem;
+}
+
+.footer-section ul {
+   list-style: none;
+   padding: 0;
+}
+
+.footer-section ul li {
+   margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+   color: #cce7ff;
+   text-decoration: none;
+   font-size: 0.9rem;
+   transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+   color: #69A9D4;
+}
+
+.footer-social ul {
+   display: flex;
+   gap: 1rem;
+   justify-content: center;
+   list-style: none;
+   padding-top: 2rem;
+}
+
+.footer-social img {
+   width: 30px;
+   height: 30px;
+   transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+   transform: scale(1.1);
+}
+   
+
 @media screen and (max-width: 768px) {
    header {
       flex-direction: column;
