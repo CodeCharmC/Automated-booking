@@ -15,7 +15,20 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.error("MongoDB connection error:", error));
 
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: [
+        "'self'", 
+        "https://cdn.jsdelivr.net", 
+        "https://cdn.skypack.dev", 
+        "'unsafe-inline'"
+      ]
+    }
+  })
+);
+  
 app.use(cors());
 
 app.use(express.json());
@@ -26,6 +39,8 @@ app.use('/auth', authRoutes);
 app.use('/doctor', doctorRoutes);
 
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use('/three', express.static(path.join(__dirname, 'node_modules/three')));
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
