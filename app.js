@@ -20,11 +20,14 @@ app.use(
     directives: {
       defaultSrc: ["'self'"],
       scriptSrc: [
-        "'self'", 
-        "https://cdn.jsdelivr.net", 
-        "https://cdn.skypack.dev", 
+        "'self'",
+        "https://cdn.jsdelivr.net",
+        "https://cdn.skypack.dev",
         "'unsafe-inline'"
-      ]
+      ],
+      connectSrc: ["'self'", "blob:"], 
+      imgSrc: ["'self'", "blob:", "data:"],
+      mediaSrc: ["'self'", "blob:"], 
     }
   })
 );
