@@ -6,24 +6,27 @@
    <title>Healthcare</title>   
    <link rel="stylesheet" href="styles.css">
    <link rel="stylesheet" href="styles-index.css">   
+   <script type="importmap">
+      {
+         "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+            "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+         }
+      }
+   </script>
 </head>
 <body>
    <header>
       <div class="nav-container">
-         <h1>
-            <a href="index.html">Healthcare</a>
-         </h1>
+         <h1><a href="index.html">Healthcare</a></h1>
          <nav aria-label="Main Navigation">
             <ul>
-               <!-- Patient Section -->
                <li>
                   <ul class="role-links">
                      <li><a href="create-appointment.html">Book Appointment</a></li>
                      <li><a href="doctors.html">Meet Our Doctors</a></li>
                   </ul>
                </li>
-      
-               <!-- Doctor Section -->
                <li>
                   <ul class="role-links">
                      <li><a href="about.html">About Us</a></li>
@@ -36,15 +39,18 @@
    </header>
    
    <main>
-      <section class="intro">
+      <!-- Intro Section -->
+      <section class="intro" id="intro">
          <div>
             <h5>Welcome to Healthcare</h5>
             <h2>Your Health, Our Priority</h2>
             <p>Book appointments with doctors easily. Manage your healthcare with ease.</p> 
          </div>          
-         <img src="../assets/hero-img-1.jpg" alt="Healthcare">    
+         <img src="./assets/hero-img-1.jpg" alt="Healthcare">  
       </section>
-      <section>
+
+      <!-- Options Section -->
+      <section id="options">
          <div aria-label="User Roles" class="role-container">
             <ul>
                <li>
@@ -64,29 +70,89 @@
             </ul>
          </div>
       </section>
+
+      <!-- Featured Services Section -->
+      <section class="featured-services" id="services">
+         <h3>Our Services</h3>
+         <div class="service-container">
+            <div class="service-item">
+               <img src="./assets/General-Checkup2.jpg" alt="General Checkup">
+               <h4>General Checkup</h4>
+               <p>Regular health assessments to ensure overall well-being.</p>
+            </div>
+            <div class="service-item">
+               <img src="./assets/ped-care.jpg" alt="Pediatric Care">
+               <h4>Pediatric Care</h4>
+               <p>Specialized healthcare services for infants, children, and adolescents.</p>
+            </div>
+            <div class="service-item">
+               <img src="./assets/emergency-services.jpg" alt="Emergency Services">
+               <h4>Emergency Services</h4>
+               <p>Quick and effective treatment for urgent healthcare needs.</p>
+            </div>
+         </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials" id="testimonials">
+         <h3>What Our Patients Say</h3>
+         <div class="testimonial-container">
+            <div class="testimonial-item">
+               <p>"Healthcare has provided me with excellent service. The staff is always friendly and professional."</p>
+               <h4>- Sarah P.</h4>
+            </div>
+            <div class="testimonial-item">
+               <p>"The doctors at Healthcare really care about their patients. Highly recommend their services!"</p>
+               <h4>- John D.</h4>
+            </div>
+            <div class="testimonial-item">
+               <p>"I always feel at ease knowing that my family's health is in good hands with Healthcare."</p>
+               <h4>- Emily R.</h4>
+            </div>
+         </div>
+      </section>
    </main>
    
    <footer>
-      <p>&copy; 2024 Healthcare</p>
+      <div class="footer-container">
+         <div class="footer-section">
+            <h4>About Us</h4>
+            <ul>
+               <li><a href="about.html">Our Mission</a></li>
+               <li><a href="about.html">Our Team</a></li>
+               <li><a href="about.html">Careers</a></li>
+            </ul>
+         </div>
+         <div class="footer-section">
+            <h4>Patient Resources</h4>
+            <ul>
+               <li><a href="news.html">FAQs</a></li>
+               <li><a href="news.html">Support Center</a></li>
+               <li><a href="news.html">Insurance Info</a></li>
+            </ul>
+         </div>
+         <div class="footer-section">
+            <h4>Contact Us</h4>
+            <ul>
+               <li><a href="#">Get in Touch</a></li>
+               <li><a href="#">Our Locations</a></li>
+               <li><a href="#">Give Feedback</a></li>
+            </ul>
+         </div>
+         <div class="footer-social">
+            <h4>Follow Us</h4>
+            <ul>
+               <li><a href="#"><img src="./assets/facebook.jpg" alt="Facebook"></a></li>
+               <li><a href="#"><img src="./assets/twitter.jpg" alt="Twitter"></a></li>
+               <li><a href="#"><img src="./assets/instagram.jpg" alt="Instagram"></a></li>
+            </ul>
+         </div>
+      </div>
+      <p>&copy; 2024 Healthcare. All rights reserved.</p>
    </footer>
 
    <div id="container3D"></div>
-   
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
-   <script>
-      VANTA.WAVES({
-         el: "#container3D",
-         mouseControls: true,
-         touchControls: true,
-         gyroControls: false,
-         minHeight: 200.00,
-         minWidth: 200.00,
-         scale: 1.00,
-         scaleMobile: 1.00
-      })
-   </script>
-   <script type="module" src="butterfly.js"></script>
-      
+
+   <script type="module" src="butterfly1.js"></script>
 </body>
 </html>
