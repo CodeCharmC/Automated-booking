@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Register</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-   p{
-      font-size: smaller;
-   }
-   p a{
-      text-decoration: none;
-      color: #007bff;
-   }
-</style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Register</title>
+   <link rel="stylesheet" href="styles.css">
+   
 </head>
 <body>
    <header>
@@ -36,56 +28,86 @@
          </nav>
       </div>
    </header>
-<main>
-   <section>
-      <h2>Register</h2>
-      <form id="register-form">
-      <input type="text" id="register-username" placeholder="Username" required />
-      <input type="email" id="register-email" placeholder="Email" required />
-      <input type="password" id="register-password" placeholder="Password" required />
-      <button type="submit">Register</button>
-      </form>
-      <p>Already have an account? <a href="auth-login.html">Login</a></p>
-   </section>
-
-</main>
-<footer>
-   <div class="footer-container">
-      <div class="footer-section">
-         <h4>About Us</h4>
-         <ul>
-            <li><a href="about.html">Our Mission</a></li>
-            <li><a href="about.html">Our Team</a></li>
-            <li><a href="about.html">Careers</a></li>
-         </ul>
+   <main>
+      <section class="registration-form">
+         <h2>Register</h2>
+         <form id="register-form" enctype="multipart/form-data">
+            <label for="register-username">Name:</label>
+            <input type="text" id="register-username" placeholder="Enter your full name" required />
+   
+            <label for="register-email">Email:</label>
+            <input type="email" id="register-email" placeholder="Enter your email" required />
+   
+            <!-- Avatar Upload Section -->
+            <label for="register-avatar" class="avatar-label">
+               Profile Picture:
+               <img id="avatar-preview" class="avatar-preview" src="" alt="Avatar Preview" style="display:none;" />
+            </label>
+            <div class="avatar-upload">
+               <input type="file" id="register-avatar" accept="image/*" class="avatar-input" />
+               <div class="avatar-dropzone" id="avatar-dropzone" aria-labelledby="avatar-preview-text">
+                  <p>Drag & Drop your avatar here</p>
+                  <span>or</span>
+                  <button type="button" class="choose-file-btn">Choose File</button>
+               </div>
+               <p id="avatar-preview-text" class="avatar-preview-text">No file chosen</p>
+            </div>
+   
+            <label for="register-specialty">Specialty:</label>
+            <input type="text" id="register-specialty" placeholder="Your specialty" required />
+   
+            <label for="register-experience">Experience:</label>
+            <input type="text" id="register-experience" placeholder="Years of experience" required />
+   
+            <label for="register-office-hours">Office Hours:</label>
+            <input type="text" id="register-office-hours" placeholder="Your office hours" required />
+   
+            <label for="register-password">Password:</label>
+            <input type="password" id="register-password" placeholder="Enter a password" required />
+   
+            <button type="submit">Register</button>
+         </form>
+         <p>Already have an account? <a href="auth-login.html">Login</a></p>
+      </section>
+   </main>
+     
+   <footer>
+      <div class="footer-container">
+         <div class="footer-section">
+            <h4>About Us</h4>
+            <ul>
+               <li><a href="about.html">Our Mission</a></li>
+               <li><a href="about.html">Our Team</a></li>
+               <li><a href="about.html">Careers</a></li>
+            </ul>
+         </div>
+         <div class="footer-section">
+            <h4>Patient Resources</h4>
+            <ul>
+               <li><a href="news.html">FAQs</a></li>
+               <li><a href="news.html">Support Center</a></li>
+               <li><a href="news.html">Insurance Info</a></li>
+            </ul>
+         </div>
+         <div class="footer-section">
+            <h4>Contact Us</h4>
+            <ul>
+               <li><a href="#">Get in Touch</a></li>
+               <li><a href="#">Our Locations</a></li>
+               <li><a href="#">Give Feedback</a></li>
+            </ul>
+         </div>
+         <div class="footer-social">
+            <h4>Follow Us</h4>
+            <ul>
+               <li><a href="#"><img src="./assets/facebook.jpg" alt="Facebook"></a></li>
+               <li><a href="#"><img src="./assets/twitter.jpg" alt="Twitter"></a></li>
+               <li><a href="#"><img src="./assets/instagram.jpg" alt="Instagram"></a></li>
+            </ul>
+         </div>
       </div>
-      <div class="footer-section">
-         <h4>Patient Resources</h4>
-         <ul>
-            <li><a href="news.html">FAQs</a></li>
-            <li><a href="news.html">Support Center</a></li>
-            <li><a href="news.html">Insurance Info</a></li>
-         </ul>
-      </div>
-      <div class="footer-section">
-         <h4>Contact Us</h4>
-         <ul>
-            <li><a href="#">Get in Touch</a></li>
-            <li><a href="#">Our Locations</a></li>
-            <li><a href="#">Give Feedback</a></li>
-         </ul>
-      </div>
-      <div class="footer-social">
-         <h4>Follow Us</h4>
-         <ul>
-            <li><a href="#"><img src="./assets/facebook.jpg" alt="Facebook"></a></li>
-            <li><a href="#"><img src="./assets/twitter.jpg" alt="Twitter"></a></li>
-            <li><a href="#"><img src="./assets/instagram.jpg" alt="Instagram"></a></li>
-         </ul>
-      </div>
-   </div>
-   <p>&copy; 2024 Healthcare. All rights reserved.</p>
-</footer>
+      <p>&copy; 2024 Healthcare. All rights reserved.</p>
+   </footer>
 <script src="auth.js"></script>
 </body>
 </html>
