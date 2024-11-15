@@ -5,9 +5,9 @@ const generateToken = (id) => jwt.sign({ id }, process.env.JWT_SECRET, { expires
 
 exports.register = async (req, res) => {
    try {
-      const { username, password, specialty, experience, officeHours, avatar } = req.body;
+      const { username, email, password, specialty, experience, officeHours, avatar } = req.body;
       
-      if (!username || !password || !specialty || !experience || !officeHours) {
+      if (!username || !email || !password || !specialty || !experience || !officeHours) {
          return res.status(400).json({ error: 'All fields are required: username, password, specialty, experience, and office hours.' });
       }
 
@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
          avatar = '/assets/profile.jpg'
       }
       console.log(avatar);
-      const doctor = new Doctor({ username, password, specialty, experience, officeHours, avatar });
+      const doctor = new Doctor({ username, email, password, specialty, experience, officeHours, avatar });
       await doctor.save();
 
       res.status(201).json({ message: 'Doctor registered successfully' });
