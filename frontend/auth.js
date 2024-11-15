@@ -2,16 +2,24 @@
 document.getElementById('register-form').addEventListener('submit', async function (e) {
   e.preventDefault();
 
-  const username = document.getElementById('register-username').value;
-  const email = document.getElementById('register-email').value;
-  const password = document.getElementById('register-password').value;
+  const formData = new FormData();
+  formData.append('username', document.getElementById('register-username').value);
+  formData.append('email', document.getElementById('register-email').value);
+  formData.append('password', document.getElementById('register-password').value);
+  formData.append('specialty', document.getElementById('register-specialty').value);
+  formData.append('experience', document.getElementById('register-experience').value);
+  formData.append('officeHours', document.getElementById('register-office-hours').value);
 
+  // Get avatar file (if exists) and append to form data
+  const avatarInput = document.getElementById('register-avatar');
+  if (avatarInput.files[0]) {
+    formData.append('avatar', avatarInput.files[0]);
+  }
+
+  // Send data to server
   const response = await fetch('/auth/register', {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ username, email, password }),
+    body: formData,
   });
 
   if (response.ok) {
@@ -21,6 +29,7 @@ document.getElementById('register-form').addEventListener('submit', async functi
     alert('Failed to register');
   }
 });
+
 
 // Login logic
 document.getElementById('login-form').addEventListener('submit', async function (e) {
